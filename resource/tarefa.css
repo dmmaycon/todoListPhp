@@ -1,0 +1,12 @@
+table,thead {
+    border: 1px solid black;
+}
+
+td, th {
+    border: 3px solid black;
+}
+
+.btnTarefa {
+    width: 80px;
+    text-align: center;
+}
