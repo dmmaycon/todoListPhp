@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tarefa.css">
+    <title>Cadastrar Tarefa</title>
+</head>
+<body>
+    <a href="/">Voltar</a>
+    <form action="/cadastrar.php" method="POST">
+        Nome: <input type="text" name="nome" id="nome" required>
+        <br>
+        Descrição <input type="text" name="descricao" id="descricao" required>
+        <br>
+        Data Limite <input type="date" name="dataLimite" required>
+        <br>
+        <input type="submit" value="Nova Tarefa">
+    </form>
+</body>
+</html>
