@@ -5,7 +5,10 @@
     <td> #NOME </td>
     <td> #DATALIMITE </td>
     <td>   
-        <button class="btnTarefa">Visualizar</button>             
-        <input type="checkbox">
+        <a class="btn btn-sm btn-primary" href="/visualizar.php?id=#ID" >Visualizar</a>         
+        <form action="/alteraTarefa.php" method="POST" id="form-#ID" >
+            <input type="hidden" name="id" value="#ID">
+            <input type="checkbox" name="status" onclick="document.querySelector('#form-#ID').submit()" #MARCADO>
+        </form>            
     </td>
 </tr>
