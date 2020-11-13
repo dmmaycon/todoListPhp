@@ -19,6 +19,7 @@ if (isset($_GET['id'])) {
             $template = str_replace('#NOME',  $tarefa->getNome(), $template);
             $template = str_replace('#DESCRICAO',  $tarefa->getDescricao(), $template);
             $template = str_replace('#DATALIMITE', $tarefa->getDataLimite(), $template);
+            $template = str_replace('#IMAGEM', $tarefa->getImagem(), $template);
         }
     }   
     if ($encontrou) {

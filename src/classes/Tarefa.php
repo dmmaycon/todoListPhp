@@ -7,13 +7,15 @@ class Tarefa
     private $nome;
     private $descricao;
     private $dataLimite;
+    private $imagem;
 
-    public function __construct(int $status, string $nome, string $descricao, string $dataLimite)
+    public function __construct(int $status, string $nome, string $descricao, string $dataLimite, string $imagem)
     {
        $this->status = $status;
        $this->nome   = $nome;
        $this->descricao = $descricao;
        $this->dataLimite = $dataLimite;
+       $this->imagem = $imagem;
     }
 
     public function getId() 
@@ -64,6 +66,16 @@ class Tarefa
     public function setDataLimite(string $dataLimite) 
     {
        $this->dataLimite = $dataLimite;
+    }
+
+    public function getImagem()
+    {
+        return $this->imagem;
+    }
+
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
     }
 
     public function legenda()

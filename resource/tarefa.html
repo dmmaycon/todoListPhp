@@ -1,14 +1,15 @@
 <!-- modelo da linha de tarefa -->
 <tr>
-    <td> #STATUS </td>
+    <td id="status-#ID"> #STATUS </td>
     <td> #ID </td>
     <td> #NOME </td>
     <td> #DATALIMITE </td>
     <td>   
         <a class="btn btn-sm btn-primary" href="/visualizar.php?id=#ID" >Visualizar</a>         
-        <form action="/alteraTarefa.php" method="POST" id="form-#ID" >
+        <!-- <form action="/alteraTarefa.php" method="POST" id="form-#ID" >
             <input type="hidden" name="id" value="#ID">
             <input type="checkbox" name="status" onclick="document.querySelector('#form-#ID').submit()" #MARCADO>
-        </form>            
+        </form>             -->
+        <input type="checkbox" name="status" onclick="alterarTarefa(#ID, this)" #MARCADO>            
     </td>
 </tr>

@@ -5,6 +5,7 @@ require "src/classes/ArquivoTarefa.php";
 
 
 if (isset($_POST)) {
+    $json = '';
     $arquivoTarefa = new ArquivoTarefa('tarefas.json');
     
     // recupera as tarefas
@@ -16,11 +17,15 @@ if (isset($_POST)) {
                 $tarefa->setStatus(0);
             } else {
                 $tarefa->setStatus(1);
-            }            
+            }
+            $json = json_encode([
+                'id' => $tarefa->getId(),
+                'legenda' => $tarefa->legenda()
+            ]);
         }
     }
 
     $arquivoTarefa->salva($arrTarefas);
 
-    header('Location: /');
+    echo $json;
 }

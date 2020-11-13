@@ -19,6 +19,7 @@ class ArquivoTarefa
             $arr['descricao'] = $tarefa->getDescricao();
             $arr['dataLimite'] = $tarefa->getDataLimite();
             $arr['status'] = $tarefa->getStatus();
+            $arr['imagem'] = $tarefa->getImagem();
             $dataTarefas[] = $arr;
         }        
         $jsonTarefas = json_encode($dataTarefas); 
@@ -30,7 +31,7 @@ class ArquivoTarefa
         $jsonTarefas = json_decode(file_get_contents($this->caminho));
         $dataTarefas = [];
         foreach ($jsonTarefas as $key => $obj) {
-            $t = new Tarefa($obj->status, $obj->nome, $obj->descricao, $obj->dataLimite);
+            $t = new Tarefa($obj->status, $obj->nome, $obj->descricao, $obj->dataLimite, $obj->imagem);
             $t->setId($obj->id);
             $dataTarefas[] = $t;
         }
